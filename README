@@ -1,3 +1,7 @@
-stay tuned!
+📝🖥️
 
-😜
+a quick and dirty way to make a presentation deck from a markdown file
+
+edit `deck.md` and run `./build.js` to generate your `index.html`
+
+the generated html utilizes reveal.js (https://github.com/hakimel/reveal.js/)

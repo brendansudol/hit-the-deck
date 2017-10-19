@@ -1,12 +1,12 @@
 { "css": "center" }
 
-# Deck
+# Deck!!
 
 ---
 
 { "css": "center" }
 
-## Hello
+## Hello!!!!
 
 ---
 
@@ -20,7 +20,7 @@ Wazzz up?
 
 ---
 
-[My site](https://www.brendansudol.com)
+[This is my site](https://www.brendansudol.com).
 
 ---
 

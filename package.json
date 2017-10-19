@@ -3,11 +3,16 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node run.js"
+    "serve": "http-server",
+    "start": "http-server & nodemon -e js,css,md ./build.js"
   },
   "dependencies": {
     "highlight.js": "^9.12.0",
     "html-minifier": "^3.5.5",
     "marked": "^0.3.6"
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0",
+    "nodemon": "^1.12.1"
   }
 }
