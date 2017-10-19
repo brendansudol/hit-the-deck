@@ -33,8 +33,9 @@ const parseSlide = txt => {
 }
 
 const buildSlideMarkup = data => {
-  const cls = (data.meta && data.meta.css) || ''
-  return `<section class="${cls}">${data.html}</section>`
+  const cls = data.meta && data.meta.css
+  const clsAttrib = cls ? ` class="${cls}"` : ''
+  return `<section${clsAttrib}>\n${data.html}</section>`
 }
 
 const deck = fs.readFileSync('deck.md', 'utf8')
@@ -44,7 +45,7 @@ const slides = deck
   .map(parseSlide)
   .map(buildSlideMarkup)
 
-const html = minify(`
+const html = `
 <!doctype html>
 <html lang="en">
   <head>
@@ -52,12 +53,12 @@ const html = minify(`
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Slide deck</title>
     <link rel="stylesheet" href="lib/css/reveal.css">
-    <link rel="stylesheet" href="lib/css/theme.css">
-    <link rel="stylesheet" href="lib/css/code.css">
+    <link rel="stylesheet" href="lib/css/misc.css">
   </head>
   <body>
     <div class="reveal">
-      <div class="slides">${slides.join('\n')}</div>
+      <div class="slides">\n\n${slides.join('\n\n')}\n
+      </div>
     </div>
     <script src="lib/js/head.min.js"></script>
     <script src="lib/js/reveal.min.js"></script>
@@ -73,7 +74,7 @@ const html = minify(`
     </script>
   </body>
 </html>
-`)
+`
 
 console.log(html)
-fs.writeFileSync('index.html', html)
+fs.writeFileSync('index.html', minify(html))

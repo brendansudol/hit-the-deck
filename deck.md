@@ -1,3 +1,4 @@
+{ "css": "center" }
 
 # Deck
 
@@ -37,9 +38,13 @@ console.log("hello");
 
 ---
 
-<div class='red'>
-  <h1>hi there!</h1>
-  <p>face here!</p>
+<div class='clearfix mxn1'>
+  <div class='col col-6 p1'>
+    <div class='p1 border'>foo</div>
+  </div>
+  <div class='col col-6 p1'>
+    <div class='p1 border'>bar</div>
+  </div>
 </div>
 
 ---
