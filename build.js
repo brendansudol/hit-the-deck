@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-var fs = require('fs')
-var marked = require('marked')
-var minifier = require('html-minifier').minify
+const fs = require('fs')
+const marked = require('marked')
+const minifier = require('html-minifier').minify
 
 marked.setOptions({
   highlight: code => {
     return require('highlight.js').highlightAuto(code).value
-  }
+  },
 })
 
 const minify = html =>
@@ -30,7 +30,7 @@ const parseSlide = txt => {
   return {
     html: marked(meta ? rest : txt),
     meta: meta,
-    raw: txt
+    raw: txt,
   }
 }
 
